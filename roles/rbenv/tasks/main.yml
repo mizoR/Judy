@@ -1,0 +1,33 @@
+- name: rbenv | Install dependencies
+  yum:  name={{ item }} state=latest
+  with_items:
+    - git
+    - tar
+    - gcc
+    - make
+    - libffi-devel
+    - readline-devel
+    - zlib-devel
+    - openssl-devel
+
+- name: rbenv | Update rbenv
+  git:  repo=git://github.com/rbenv/rbenv.git dest=/usr/local/rbenv version=v0.4.0
+
+- name: rbenv | Add rbenv to path
+  file: path=/usr/local/bin/rbenv src=/usr/local/rbenv/bin/rbenv state=link
+
+- name: rbenv | Add rbenv initialization to profile
+  template: src=templates/rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh owner=root group=root mode=0755
+
+- name: rbenv | Update ruby-build
+  git: repo=git://github.com/rbenv/ruby-build.git dest=/usr/local/rbenv/plugins/ruby-build version=master
+
+- name: rbenv | Install ruby {{ ruby_version }}
+  shell: RBENV_ROOT=/usr/local/rbenv /usr/local/rbenv/bin/rbenv install -s {{ ruby_version }}
+
+- name: rbenv | Use ruby {{ ruby_version }}
+  shell: RBENV_ROOT=/usr/local/rbenv /usr/local/rbenv/bin/rbenv global {{ ruby_version }}
+
+- name: rbenv | Install bundler
+  shell: RBENV_ROOT=/usr/local/rbenv /usr/local/rbenv/bin/rbenv exec gem install bundler
+
