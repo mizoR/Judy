@@ -5,7 +5,10 @@
 
   pre_tasks:
     - user: name=app shell=/bin/bash
-
+    - name: Set up authorized_keys for the app user
+      authorized_key: user=app key="{{ item }}"
+      with_file:
+        - public_keys/mizokami
 
   roles:
     - { role: common }
