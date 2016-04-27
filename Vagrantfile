@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     node.vm.provision 'ansible_local' do |ansible|
-      ansible.playbook = 'site.yml'
+      ansible.playbook = 'provisioning/site.yml'
       ansible.groups   = { targets: [bot_server] }
       ansible.install  = true
       ansible.version  = '2.0.1.0'
