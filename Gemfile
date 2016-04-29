@@ -1,3 +1,9 @@
 source 'https://rubygems.org/'
 
-gem 'capistrano'
+group :test, :development do
+  gem 'serverspec'
+end
+
+group :developmet do
+  gem 'capistrano'
+end
