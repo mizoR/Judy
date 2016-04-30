@@ -13,4 +13,5 @@
   roles:
     - { role: common }
     - { role: rbenv, ruby_version: 2.3.0 }
+    - { role: redis }
 
