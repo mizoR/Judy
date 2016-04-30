@@ -1,12 +1,14 @@
 source 'https://rubygems.org/'
 
-gem 'ruboty'
-gem 'ruboty-hipchat'
 gem 'ruboty-redis'
 gem 'ruboty-echo'
 gem 'ruboty-cron'
 
-group :test, :development do
+group :production do
+  gem 'ruboty-hipchat'
+end
+
+group :test do
   gem 'serverspec'
 end
 

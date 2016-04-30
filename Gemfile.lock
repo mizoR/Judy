@@ -89,7 +89,6 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
-  ruboty
   ruboty-cron
   ruboty-echo
   ruboty-hipchat

@@ -1,4 +1,5 @@
-ENV['STAGE'] ||= 'development'
+ENV['RUBOTY_ENV'] ||= 'test'
+ENV['STAGE'] ||= 'vagrant'
 
 require 'serverspec'
 require 'net/ssh'
