@@ -1,5 +1,7 @@
 source 'https://rubygems.org/'
 
+gem 'foreman'
+
 gem 'ruboty-redis'
 gem 'ruboty-echo'
 gem 'ruboty-cron'
