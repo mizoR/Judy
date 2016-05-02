@@ -1,2 +1,9 @@
 - name: Update yum packages
   yum:  name=* state=latest
+
+- name: Create user
+  user: name="{{ common.user.name }}" shell=/bin/bash
+
+- name: Set up authorized_keys for the user
+  authorized_key: user="{{ common.user.name }}" key="{{ item }}"
+  with_file: "{{ common.user.authorized_keys }}"

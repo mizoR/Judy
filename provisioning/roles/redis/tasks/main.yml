@@ -1,5 +1,5 @@
-- name: redis | Install or update
+- name: Install or update
   yum:  name=redis state=latest
 
-- name: redis | Enable and start
+- name: Enable and start
   service: name=redis enabled=yes state=started
