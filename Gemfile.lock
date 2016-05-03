@@ -11,6 +11,8 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
+    capistrano-scm-copy (0.7.0)
+      capistrano (~> 3.0)
     chrono (0.3.0)
       activesupport
     diff-lcs (1.2.5)
@@ -92,6 +94,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  capistrano-scm-copy
   foreman
   ruboty-cron
   ruboty-echo

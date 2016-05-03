@@ -16,4 +16,5 @@ end
 
 group :developmet do
   gem 'capistrano'
+  gem 'capistrano-scm-copy'
 end
