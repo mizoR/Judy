@@ -1,0 +1,4 @@
+bot001 ansible_connection=local
+
+[targets]
+bot001

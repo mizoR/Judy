@@ -7,8 +7,10 @@ set :linked_files, fetch(:linked_files, []).push('.env')
 set :linked_dirs,  fetch(:linked_dirs,  []).push('log', 'tmp', 'vendor/bundle')
 set :scm, :copy
 
-task :ping do
-  on roles(:all) do
-    execute "echo pong"
+task :provision do
+  on roles(:app) do
+    provision_path = File.join(current_path, 'provisioning')
+    inventry_path  = File.join(provision_path, 'bot.inventry')
+    execute "cd #{provision_path} && ansible-playbook -i #{inventry_path} ./site.yml"
   end
 end
