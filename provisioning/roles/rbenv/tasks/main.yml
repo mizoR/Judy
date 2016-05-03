@@ -30,3 +30,6 @@
 
 - name: Install bundler
   shell: RBENV_ROOT=/usr/local/rbenv /usr/local/rbenv/bin/rbenv exec gem install bundler
+
+- name: Init rbenv
+  shell: bash /etc/profile.d/rbenv.sh

@@ -1,7 +1,5 @@
 source 'https://rubygems.org/'
 
-gem 'foreman'
-
 gem 'ruboty-redis'
 gem 'ruboty-echo'
 gem 'ruboty-cron'
@@ -17,4 +15,6 @@ end
 group :developmet do
   gem 'capistrano'
   gem 'capistrano-scm-copy'
+  gem 'capistrano-upload-config'
+  gem 'capistrano-bundler'
 end

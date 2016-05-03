@@ -1,5 +1,8 @@
 /.env
+/.env.vagrant
 /.bundle
 /.vagrant
 /dump.rdb
+/log
 /provisioning/site.retry
+/tmp

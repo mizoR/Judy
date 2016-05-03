@@ -1,4 +1,4 @@
-host = 'bot001'
+host = 'judy001'
 config = Tempfile.new('', Dir.tmpdir)
 config.write(`vagrant ssh-config #{host}`)
 config.close

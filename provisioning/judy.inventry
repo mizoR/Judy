@@ -1,0 +1,4 @@
+judy001 ansible_connection=local
+
+[targets]
+judy001
