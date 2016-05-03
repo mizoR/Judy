@@ -2,8 +2,11 @@
   yum:  name=* state=latest
 
 - name: Create user
-  user: name="{{ common.user.name }}" shell=/bin/bash
+  user: name="{{ common.user.name }}" shell=/bin/bash groups="wheel"
 
 - name: Set up authorized_keys for the user
   authorized_key: user="{{ common.user.name }}" key="{{ item }}"
   with_file: "{{ common.user.authorized_keys }}"
+
+- name: Allow sudo without password
+  lineinfile: dest=/etc/sudoers.d/{{ common.user.name }} line="{{ common.user.name }} ALL=(ALL) NOPASSWD:ALL" create=yes owner=root group=root mode=0440
