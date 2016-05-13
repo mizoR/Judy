@@ -2,6 +2,7 @@
 /.env.vagrant
 /.bundle
 /.vagrant
+/archive.tar.gz
 /dump.rdb
 /log
 /provisioning/site.retry
