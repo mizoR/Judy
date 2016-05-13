@@ -1,4 +1,4 @@
-lock '3.4.1'
+lock '3.5.0'
 
 set :application,  'judy'
 set :repo_url,     'git@github.com:mizoR/Judy.git'
