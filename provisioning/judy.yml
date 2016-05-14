@@ -10,7 +10,7 @@
         authorized_keys:
           - public_keys/mizokami.pub
     rbenv:
-      ruby_version: 2.3.0
+      ruby_version: 2.3.1
 
   roles:
     - common
