@@ -15,7 +15,7 @@ start() {
     echo "Starting judy..."
     mkdir -p $(dirname $LOG)
     mkdir -p $(dirname $PID)
-    nohup bundle exec ruboty --dotenv >> $LOG 2>&1 &
+    nohup bundle exec ruboty --dotenv --load app.rb >> $LOG 2>&1 &
     echo $! > $PID
   fi
 }
