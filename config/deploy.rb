@@ -17,15 +17,11 @@ task :provision do
   end
 end
 
-namespace :deploy do
-  def define_deploy_task(command)
-    task command do
-      invoke "judy:#{command}"
-    end
-  end
+after 'deploy:publishing', 'deploy:restart'
 
-  %i(start stop restart status).each do |command|
-    define_deploy_task(command)
+namespace :deploy do
+  task :restart do
+    invoke 'judy:restart'
   end
 end
 
