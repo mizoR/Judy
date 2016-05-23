@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    airbrussh (1.0.1)
+    airbrussh (1.0.2)
       sshkit (>= 1.6.1, != 1.7.0)
     capistrano (3.5.0)
       airbrussh (>= 1.0.0)
@@ -30,8 +30,8 @@ GEM
     i18n (0.7.0)
     json (1.8.3)
     mem (0.1.5)
-    minitest (5.8.4)
-    multi_json (1.12.0)
+    minitest (5.9.0)
+    multi_json (1.12.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.1.1)
@@ -75,14 +75,14 @@ GEM
       redis
       redis-namespace
       ruboty
-    serverspec (2.34.0)
+    serverspec (2.36.0)
       multi_json
       rspec (~> 3.0)
       rspec-its
       specinfra (~> 2.53)
     sfl (2.2)
     slop (4.3.0)
-    specinfra (2.57.2)
+    specinfra (2.57.4)
       net-scp
       net-ssh (>= 2.7, < 4.0)
       net-telnet
